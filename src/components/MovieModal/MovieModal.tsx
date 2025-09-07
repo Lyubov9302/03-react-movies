@@ -61,10 +61,10 @@ export default function MovieModal({ movie, onClose }: MovieModalProps) {
           <h2>{movie.title}</h2>
           <p>{movie.overview}</p>
           <p>
-            <strong>{movie.release_date}:</strong> movie_release_date
+            <strong>Дата виходу:</strong> {movie.release_date}
           </p>
           <p>
-            <strong>{movie.vote_average}:</strong> movie_vote_average/10
+            <strong>Рейтинг:</strong> {movie.vote_average}/10
           </p>
         </div>
       </div>

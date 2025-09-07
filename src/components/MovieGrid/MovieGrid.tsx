@@ -3,7 +3,7 @@ import { Movie } from "../../types/movie";
 import noImagePlaceholder from "../../assets/no-image-placeholder.svg";
 
 interface MovieGridProps {
-  onSelect: (movieId: number) => void;
+  onSelect: (movie: Movie) => void;
   movies: Movie[];
 }
 
@@ -18,7 +18,7 @@ export default function MovieGrid({ onSelect, movies }: MovieGridProps) {
       {movies.map((movie) => (
         <li
           key={movie.id}
-          onClick={() => onSelect(movie.id)}
+          onClick={() => onSelect(movie)}
         >
           <div className={css.card}>
             <img
