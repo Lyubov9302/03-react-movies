@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Movie } from "../../types/movie";
 import css from "./MovieModal.module.css";
 import { createPortal } from "react-dom";
+import noImagePlaceholder from "../../assets/no-image-placeholder.svg";
 
 interface MovieModalProps {
   movie: Movie;
@@ -51,7 +52,7 @@ export default function MovieModal({ movie, onClose }: MovieModalProps) {
           src={
             movie.backdrop_path
               ? `${BASE_IMAGE_URL}${movie.backdrop_path}`
-              : "https://via.placeholder.com/1280x720?text=No+Image"
+              : noImagePlaceholder
           }
           alt={movie.title}
           className={css.image}

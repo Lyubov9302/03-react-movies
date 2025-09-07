@@ -1,5 +1,6 @@
 import css from "./MovieGrid.module.css";
 import { Movie } from "../../types/movie";
+import noImagePlaceholder from "../../assets/no-image-placeholder.svg";
 
 interface MovieGridProps {
   onSelect: (movieId: number) => void;
@@ -25,7 +26,7 @@ export default function MovieGrid({ onSelect, movies }: MovieGridProps) {
               src={
                 movie.poster_path
                   ? `${BASE_IMAGE_URL}${movie.poster_path}`
-                  : "placeholder_image_url"
+                  : noImagePlaceholder
               }
               alt={movie.title}
               loading="lazy"
