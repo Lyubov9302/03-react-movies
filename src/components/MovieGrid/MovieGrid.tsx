@@ -2,9 +2,11 @@ import css from "./MovieGrid.module.css";
 import { Movie } from "../../types/movie";
 
 interface MovieGridProps {
-  onSelect: () => void;
+  onSelect: (movieId: number) => void;
   movies: Movie[];
 }
+
+const BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w500";
 
 export default function MovieGrid({ onSelect, movies }: MovieGridProps) {
   if (!movies || movies.length === 0) {
@@ -20,7 +22,11 @@ export default function MovieGrid({ onSelect, movies }: MovieGridProps) {
           <div className={css.card}>
             <img
               className={css.image}
-              src={movie.poster_path}
+              src={
+                movie.poster_path
+                  ? `${BASE_IMAGE_URL}${movie.poster_path}`
+                  : "placeholder_image_url"
+              }
               alt={movie.title}
               loading="lazy"
             />

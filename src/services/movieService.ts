@@ -12,8 +12,6 @@ export const fetchMovies = async (query: string): Promise<Movie[]> => {
     {
       params: {
         query: query,
-        include_adult: false,
-        language: "en-US",
       },
       headers: {
         Authorization: `Bearer ${API_TOKEN}`,
