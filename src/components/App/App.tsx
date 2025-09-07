@@ -7,6 +7,7 @@ import Loader from "../Loader/Loader";
 import MovieGrid from "../MovieGrid/MovieGrid";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import MovieModal from "../MovieModal/MovieModal";
+import css from "./App.module.css";
 
 export default function App() {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -47,7 +48,9 @@ export default function App() {
 
   return (
     <>
-      <SearchBar onSubmit={handleSearch} />
+      <header className={css.header}>
+        <SearchBar onSubmit={handleSearch} />
+      </header>
       <Toaster />
       {isLoading && <Loader />}
       {isError && <ErrorMessage />}
